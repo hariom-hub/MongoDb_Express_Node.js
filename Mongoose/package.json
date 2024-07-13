@@ -1,0 +1,17 @@
+{
+  "name": "mongoose",
+  "version": "1.0.0",
+  "description": "let's learn mongoose.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yo"
+  ],
+  "author": "hariom singh thakur ( ranaji )",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.5.1"
+  }
+}
