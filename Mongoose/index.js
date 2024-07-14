@@ -81,16 +81,62 @@ const user3 = new user({
 //     console.log(error);
 // });
 
-user.insertMany(
-    [
-    { name: "sundar pichai", age: 54, degree: "b.tech,ms,mba" },
-    { name: "satya nadella", age: 56, degree: "b.tech,m.tech,mba" },
-    { name: "arjuna", age: 4000, degree: "vedas,upanishads", rollNo: 1 },
-    { name: "aacharya prashant", age: 45, degree: "b.tech,mba", rollNo: 1.1 },
-    ]
-).then((result) => {
-    console.log(result);
+// user.insertMany(
+//     [
+//     { name: "sundar pichai", age: 54, degree: "b.tech,ms,mba" },
+//     { name: "satya nadella", age: 56, degree: "b.tech,m.tech,mba" },
+//     { name: "arjuna", age: 4000, degree: "vedas,upanishads", rollNo: 1 },
+//     { name: "aacharya prashant", age: 45, degree: "b.tech,mba", rollNo: 1.1 },
+//     ]
+// ).then((result) => {
+//     console.log(result);
+// }).catch((error) => {
+
+//     console.log(error);
+// })
+
+// user.find({ age: { $lt: 30 } }).then((data) => {
+//     console.log(data);
+// }).catch((error) => {
+
+//     console.log(error);
+// });
+
+// mongoose.connection.close();
+
+
+// user.findById("6692cdc5a717597c9cb99fab").then((data) => {
+//     console.log(data);
+// }).catch((error) => {
+
+//     console.log(error);
+// });
+// console.log("-----------------------------------");
+// user.findOne({ age: { $lt: 25 } }).then((data) => {
+
+//     console.log(data);
+// }).catch((error) => {
+//     console.log(error);
+// })
+
+//update data
+
+// user.updateOne({ age: 56 }, { $set: { name: "satya nadella ceo" } });
+
+user.find({}).then((data) => {
+
+    console.log(data);
 }).catch((error) => {
 
     console.log(error);
 })
+// user.updateOne({age:{$gt:50}},{$set:{experience:"master"}}).then(()=>{
+//     console.log("data updated successfully");
+// })
+
+
+// user.updateMany({ age: { $gt: 50 } },{degree:"padhai"}).then((result) => {
+//     console.log(result);
+// }).catch((error) => {
+//     console.log(error);
+// })
