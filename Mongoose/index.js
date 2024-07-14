@@ -119,18 +119,18 @@ const user3 = new user({
 //     console.log(error);
 // })
 
-//update data
+// // update data
 
 // user.updateOne({ age: 56 }, { $set: { name: "satya nadella ceo" } });
 
-user.find({}).then((data) => {
+// user.find({}).then((data) => {
 
-    console.log(data);
-}).catch((error) => {
+//     console.log(data);
+// }).catch((error) => {
 
-    console.log(error);
-})
-// user.updateOne({age:{$gt:50}},{$set:{experience:"master"}}).then(()=>{
+//     console.log(error);
+// })
+// // user.updateOne({age:{$gt:50}},{$set:{experience:"master"}}).then(()=>{
 //     console.log("data updated successfully");
 // })
 
@@ -140,3 +140,18 @@ user.find({}).then((data) => {
 // }).catch((error) => {
 //     console.log(error);
 // })
+
+// user.findOneAndUpdate({ name: "sundar pichai" }, { age: 53 }, { new: true }).then((data) => {
+
+//     console.log(data);
+// }).catch((error) => {
+
+//     console.log(error);
+// });
+
+user.findOneAndDelete({ age: { $gt: 50 } }).then((data) => {
+
+    console.log(data);
+}).catch((error) => {
+    console.log(error);
+})
