@@ -11,7 +11,7 @@ main().then(() => {
 
 async function main() {
 
-    await mongoose.connect('mongodb://127.0.0.1:27017/test');
+    await mongoose.connect('mongodb://127.0.0.1:27017/coder');
 }
 
 
@@ -40,30 +40,30 @@ const user = mongoose.model("user", Userschema);
 
 //inserting into user(inside the class Model by creating it's object (instance))
 
-const uesr1 = new user({
+// const uesr1 = new user({
 
-    name: "hariom singh thakur",
-    age: 20,
-    degree: "b.tech",
-    rollNo: 2404488
-});
+//     name: "hariom singh thakur",
+//     age: 20,
+//     degree: "b.tech",
+//     rollNo: 2404488
+// });
 
 
-const user2 = new user({
+// const user2 = new user({
 
-    name: "gaurisha singh thakur",
-    age: 19,
-    degree: "bca",
-    rollNo: 240438
-});
+//     name: "gaurisha singh thakur",
+//     age: 19,
+//     degree: "bca",
+//     rollNo: 240438
+// });
 
-const user3 = new user({
+// const user3 = new user({
 
-    name: "shreesha singh thakur",
-    age: 23,
-    degree: "gds",
-    rollNo: 2303354
-});
+//     name: "shreesha singh thakur",
+//     age: 23,
+//     degree: "gds",
+//     rollNo: 2303354
+// });
 
 // user2.save().then((result) => {
 
@@ -79,7 +79,7 @@ const user3 = new user({
 // }).catch((error) => {
 
 //     console.log(error);
-// });
+// });  
 
 // user.insertMany(
 //     [
@@ -149,9 +149,107 @@ const user3 = new user({
 //     console.log(error);
 // });
 
-user.findOneAndDelete({ age: { $gt: 50 } }).then((data) => {
+const coderSchema = new mongoose.Schema({
 
-    console.log(data);
-}).catch((error) => {
-    console.log(error);
-})
+    name: {
+
+        type: String,
+        required: true
+    },
+    domain: {
+
+        type: String,
+        required: true
+    },
+    experience: {
+        type: Number,
+        default: 0
+    },
+    age: {
+        type: Number,
+        runValidators: true,
+        min: 20
+    },
+    timing: {
+        type: String,
+        enum: ["day shift", "night shift"],
+    },
+
+});
+
+const coder = mongoose.model("coder", coderSchema);
+
+
+// coder.insertMany([{
+
+
+//     name: "ritansh",
+//     domain: "ml and ds",
+//     age: 20,
+// }
+// ]);
+
+// let coder3 = new coder({
+
+//     name: " ali khan",
+//     domain: "web dev,android,db,ai&ml,devops",
+//     age: 30,
+//     timing: "night shift",
+//     experience: 10
+// }).save().then((data) => {
+//     console.log(data);
+// }).catch((error) => {
+//     console.log(error);
+// })
+
+
+// let coder1 =;new coder({
+
+//     name: "hariom",
+//     domain: "web dev",
+//     age: 20
+// }).save().then((data) => {
+
+//     console.log(data);
+// }).catch((error) => {
+
+//     console.log(error);
+
+// })
+
+
+// let coder2 = new coder({
+
+//     name: "ammu pandey",
+//     domain: "machine learning",
+//     age: 19,
+//     experience: 10
+// }).save().then((data) => {
+
+//     console.log(data);
+// }).catch((error) => {
+
+//     console.log(error);
+// })
+
+
+// user.findOneAndDelete({ age: { $gt: 50 } }).then((data) => {
+
+//     console.log(data);
+// }).catch((error) => {
+//     console.log(error);
+// })
+
+// let coder3 = new coder({
+
+//     name: "bro coder",
+//     domain: "competitive programming",
+//     age: 30,
+//     experience: 12,
+//     timing: "day shift",
+// }).save().then((data) => {
+//     console.log(data);
+// }).catch((error) => {
+//     console.log(error);
+// })
+

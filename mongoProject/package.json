@@ -1,0 +1,22 @@
+{
+  "name": "mongoproject",
+  "version": "1.0.0",
+  "description": "let's create a mongodb project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "keep",
+    "grinding",
+    "key",
+    "learning..."
+  ],
+  "author": "hariom singh thakur",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1",
+    "nodemon": "^3.1.4"
+  }
+}
