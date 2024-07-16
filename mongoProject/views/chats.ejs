@@ -24,8 +24,10 @@
 <body>
     <h1>Here are your chats stored in db.</h1>
     <hr>
-    <button><a href="">Add Chats</a></button>
-    <br><br>
+    <form action="/chats/new" method="get">
+        <button>Add Chats</button>
+    </form>
+    <br>
 
     <% for(let chat of chats){%>
         <hr>

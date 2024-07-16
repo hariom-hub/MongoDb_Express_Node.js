@@ -51,6 +51,33 @@ app.get('/chats', async (req, res) => {
 
 })
 
+// ADD ROUTE
+
+app.get('/chats/new', (req, res) => {
+
+    res.render("new.ejs");
+});
+
+app.post('/chats', (req, res) => {
+
+    let { from, to, msg ,createdAt} = req.body;
+    let newChat = new chatData({
+
+        from: from,
+        to: to,
+        msg: msg,
+        createdAt: createdAt
+    });
+    newChat.save().then((data) => {
+
+        console.log(data);
+    }).catch((error) => {
+        console.log(error);
+    });
+
+    res.redirect("/chats");
+})
+
 // EDIT ROUTE
 
 app.get('/chats/:id/edit', async (req, res) => {
