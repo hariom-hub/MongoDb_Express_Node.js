@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit route</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit message from here</h1>
+    <div>
+        <h3>From : <%= user.from %>
+        </h3>
+        <h3>Received by : <%= user.to %>
+        </h3>
+        <br>
+        <label for="">Messge : </label>
+
+        <form action="/chats/<%=user.id%>?_method=PUT" method="post">
+            <textarea name="msg" id="" rows="5" cols="25"><%= user.msg %></textarea>
+            <BR></BR>
+            <button>Save</button>   
+        </form>
+    </div>
+</body>
+
+</html>

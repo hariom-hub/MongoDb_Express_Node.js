@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All chats in db</title>
+    <link rel="stylesheet" href="chats.css">
+    <!-- <style>
+        html,
+        body {
+
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgba(107, 213, 97, 0.621);
+        }
+    </style> -->
+</head>
+
+<body>
+    <h1>Here are your chats stored in db.</h1>
+    <hr>
+    <button><a href="">Add Chats</a></button>
+    <br><br>
+
+    <% for(let chat of chats){%>
+        <hr>
+        <div>
+            <h3>From @: <%= chat.from %>
+            </h3>
+            <h3>To : <%= chat.to %>
+            </h3>
+            <p>Message : <%= chat.msg %>
+            </p>
+            <p>Time :<%= chat.createdAt.toString().split(" ")[4] %>
+            </p>
+            <p>Date : <%= chat.createdAt.toString().split(" ").slice(0,4).join("-") %></p>
+        </div>
+        <form action="/chats/<%= chat.id %>/edit" method="get" >
+            <button type="submit">Edit</button>
+        </form>
+        <form action="/chats/<%=chat.id%>?_method=DELETE" method= "post" >
+            <button type="submit">Delete</button>
+        </form>
+        <hr>
+        <% } %>
+
+
+</body>
+
+</html>
